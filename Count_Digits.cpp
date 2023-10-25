@@ -1,7 +1,8 @@
-<<<<<<< HEAD
+/*
+   * कर्मणये वाधिकारस्ते मां फलेषु कदाचन ।
+   * मां कर्मफलहेतुर्भू: मांते संङगोस्त्वकर्मणि ॥
+*/
 
-=======
->>>>>>> 9f54aa6 (Code)
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -16,24 +17,22 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 }
 
 /*
-   * For a given 3 digit number, find whether it is armstrong number or not. An Armstrong number of three digits is an integer such that the sum of the cubes of its digits is equal to the number itself. Return "Yes" if it is a armstrong number else return "No".
+   * Given a number N. Count the number of digits in N which evenly divides N.
 */
-string armstrongNumber(int n) {
-    string temp = to_string(n);
-    int sum = 0;
-    for (int i = 0; i < temp.length(); i++) {
-        sum += pow(temp[i] - '0', temp.length());
+int evenlyDivides(int N){
+    int x = N, cnt = 0;
+    while (x) {
+        int rem = x % 10;
+        if (rem != 0 && N % rem == 0)    cnt++;
+        x /= 10;
     }
-    if (sum == n) {
-        return "Yes";
-    }
-    return "No";
+    return cnt;
 }
 
 void solve() {
-    int n;
-    cin >> n;
-    cout << armstrongNumber(n) << endl;
+    int N;
+    cin >> N;
+    cout << evenlyDivides(N) << endl;
 }
 
 int32_t main() {

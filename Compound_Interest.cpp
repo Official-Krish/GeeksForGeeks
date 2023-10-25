@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 9f54aa6 (Code)
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -16,24 +12,14 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 }
 
 /*
-   * For a given 3 digit number, find whether it is armstrong number or not. An Armstrong number of three digits is an integer such that the sum of the cubes of its digits is equal to the number itself. Return "Yes" if it is a armstrong number else return "No".
+   * Calculate the Compund interest for given principal amount P , time T(in years), compounded N times in a year at rate R. Calculate floor of future value of given principal amount.
 */
-string armstrongNumber(int n) {
-    string temp = to_string(n);
-    int sum = 0;
-    for (int i = 0; i < temp.length(); i++) {
-        sum += pow(temp[i] - '0', temp.length());
-    }
-    if (sum == n) {
-        return "Yes";
-    }
-    return "No";
+int getCompoundInterest(int P, int T, int N, int R) {
+    return P * pow((1 + ((R / 100.0) / N)), N * T);
 }
 
 void solve() {
-    int n;
-    cin >> n;
-    cout << armstrongNumber(n) << endl;
+
 }
 
 int32_t main() {

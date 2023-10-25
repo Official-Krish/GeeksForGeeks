@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 9f54aa6 (Code)
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -16,24 +12,16 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 }
 
 /*
-   * For a given 3 digit number, find whether it is armstrong number or not. An Armstrong number of three digits is an integer such that the sum of the cubes of its digits is equal to the number itself. Return "Yes" if it is a armstrong number else return "No".
+   * Given two arrays A and B of equal size N, the task is to find if given arrays are equal or not. Two arrays are said to be equal if both of them contain same set of elements, arrangements (or permutation) of elements may be different though.
 */
-string armstrongNumber(int n) {
-    string temp = to_string(n);
-    int sum = 0;
-    for (int i = 0; i < temp.length(); i++) {
-        sum += pow(temp[i] - '0', temp.length());
-    }
-    if (sum == n) {
-        return "Yes";
-    }
-    return "No";
+bool check(vector<int> A, vector<int> B) {
+    sort(A.begin(), A.end());
+    sort(B.begin(), B.end());
+    return A == B;
 }
 
 void solve() {
-    int n;
-    cin >> n;
-    cout << armstrongNumber(n) << endl;
+
 }
 
 int32_t main() {

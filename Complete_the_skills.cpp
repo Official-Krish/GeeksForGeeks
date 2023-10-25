@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 9f54aa6 (Code)
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -17,30 +14,21 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 }
 
 /*
-   * Given two arrays: a1[0..n-1] of size n and a2[0..m-1] of size m. Task is to check whether a2[] is a subset of a1[] or not. Both the arrays can be sorted or unsorted.
+    * A and B are good friend and programmers. They are always in a healthy competition with each other. They decide to judge the best among them by competing. They do so by comparing their three skills as per their values. Please help them doing so as they are busy.
 */
-string isSubset(int a1[], int a2[], int n, int m) {
-    set<int> HashSet;
-    for (int i = 0; i < n; i++) HashSet.insert(a1[i]);
-
-    for (int i = 0; i < m; i++) {
-        if (HashSet.find(a2[i]) == HashSet.end()) return "NO";
-    }
-    return "YES";
-}
-// Time Complexity: O(n + m)
-
 void solve() {
-    int n, m;
-    cin >> n >> m;
-    int a1[n], a2[m];
-    for (int i = 0; i < n; i++) {
-        cin >> a1[i];
+    long long a[] = { 4 , 2, 7 }; long long b[] = { 5, 6, 3 };
+
+    int a1 = 0, b1 = 0;
+    for (int i = 0; i < 3; i++) {
+        if (a[i] > b[i])
+            a1++;
+        else if (a[i] < b[i])
+            b1++;
+        else
+            continue;
     }
-    for (int i = 0; i < m; i++) {
-        cin >> a2[i];
-    }
-    cout << isSubset(a1, a2, n, m) << endl;
+    cout << a1 << " " << b1;
 }
 
 int32_t main() {

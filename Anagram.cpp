@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9f54aa6 (Code)
 
 #include <bits/stdc++.h>
 using namespace std;

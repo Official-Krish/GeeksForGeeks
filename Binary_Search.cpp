@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 9f54aa6 (Code)
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -17,30 +14,20 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 }
 
 /*
-   * Given two arrays: a1[0..n-1] of size n and a2[0..m-1] of size m. Task is to check whether a2[] is a subset of a1[] or not. Both the arrays can be sorted or unsorted.
+   * Given a sorted array of size N and an integer K, find the position at which K is present in the array using binary search.
 */
-string isSubset(int a1[], int a2[], int n, int m) {
-    set<int> HashSet;
-    for (int i = 0; i < n; i++) HashSet.insert(a1[i]);
+int binarySearch(int arr[], int n, int k) {
+    if (n == 0) return -1;
+    if (binary_search(arr, arr + n, k)) return lower_bound(arr, arr + n, k) - arr;
 
-    for (int i = 0; i < m; i++) {
-        if (HashSet.find(a2[i]) == HashSet.end()) return "NO";
-    }
-    return "YES";
+    return -1;
 }
-// Time Complexity: O(n + m)
 
 void solve() {
-    int n, m;
-    cin >> n >> m;
-    int a1[n], a2[m];
-    for (int i = 0; i < n; i++) {
-        cin >> a1[i];
-    }
-    for (int i = 0; i < m; i++) {
-        cin >> a2[i];
-    }
-    cout << isSubset(a1, a2, n, m) << endl;
+    int n, k; cin >> n >> k;
+    int arr[n];
+    for (int i = 0; i < n; i++) cin >> arr[i];
+    cout << binarySearch(arr, n, k) << endl;
 }
 
 int32_t main() {

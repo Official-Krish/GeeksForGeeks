@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 9f54aa6 (Code)
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -16,24 +12,20 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 }
 
 /*
-   * For a given 3 digit number, find whether it is armstrong number or not. An Armstrong number of three digits is an integer such that the sum of the cubes of its digits is equal to the number itself. Return "Yes" if it is a armstrong number else return "No".
+   * Given a string, check if all its characters are same or not.
 */
-string armstrongNumber(int n) {
-    string temp = to_string(n);
-    int sum = 0;
-    for (int i = 0; i < temp.length(); i++) {
-        sum += pow(temp[i] - '0', temp.length());
+bool check(string s) {
+    for (int i = 0; i < s.length(); i++) {
+        if (s[i] != s[0])
+            return false;
     }
-    if (sum == n) {
-        return "Yes";
-    }
-    return "No";
+    return true;
 }
 
 void solve() {
-    int n;
-    cin >> n;
-    cout << armstrongNumber(n) << endl;
+    string s;
+    cin >> s;
+    cout << (check(s) ? "YES" : "NO") << endl;
 }
 
 int32_t main() {

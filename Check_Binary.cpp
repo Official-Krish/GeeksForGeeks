@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 9f54aa6 (Code)
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -16,24 +12,19 @@ void __f(const char* names, Arg1&& arg1, Args&&... args) {
 }
 
 /*
-   * For a given 3 digit number, find whether it is armstrong number or not. An Armstrong number of three digits is an integer such that the sum of the cubes of its digits is equal to the number itself. Return "Yes" if it is a armstrong number else return "No".
+   * Given a non-empty sequence of characters str, return true if sequence is Binary, else return false
 */
-string armstrongNumber(int n) {
-    string temp = to_string(n);
-    int sum = 0;
-    for (int i = 0; i < temp.length(); i++) {
-        sum += pow(temp[i] - '0', temp.length());
+bool isBinary(string str) {
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] != '0' && str[i] != '1') return false;
     }
-    if (sum == n) {
-        return "Yes";
-    }
-    return "No";
+    return true;
 }
 
 void solve() {
-    int n;
-    cin >> n;
-    cout << armstrongNumber(n) << endl;
+    string str;
+    cin >> str;
+    cout << (isBinary(str) ? "YES" : "NO") << endl;
 }
 
 int32_t main() {
